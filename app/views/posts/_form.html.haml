@@ -1,0 +1,6 @@
+%h2 Adding new post
+.newPost{ "data-controller": "posts" }
+  = form_with model: post, url: posts_path, data: { action: "posts#createSuccess" } do |f|
+    = f.text_field :title, data: { target: "posts.title" }, placeholder: 'Add title'
+    = f.text_area :description, data: { target: "posts.description" }, placeholder: 'Add description'
+    = f.submit "Create Post"

@@ -1,0 +1,13 @@
+.postList{ "data-controller": "posts" }
+  = link_to 'Add new post', new_post_path
+  %table.table
+    %thead
+      %tr
+        %th Title
+        %th Description
+        %th{ colspan: 3 } Actions
+    %tbody
+      - if @posts.present?
+        = render @posts
+      -else
+        %td{ colspan: 3 } No Posts to display
